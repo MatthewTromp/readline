@@ -296,10 +296,6 @@ This kills the buffer's associated readline buffer."
   "Return command list to initiate bash for completions."
   (list shell-file-name))
 
-(defun readline--get-bash-command ()
-  "."
-  '("~/src/bash/bash"))
-
 (defun readline--get-readline-buffer ()
   "Get the readline buffer for the current buffer.
 

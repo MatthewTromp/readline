@@ -58,7 +58,7 @@ completion aborts."
 
 (setopt readline-completions-timeout nil)
 
-(defcustom readline-use-minibuffer-completion nil
+(defcustom readline-use-minibuffer-completion t
   "Whether to use readline completions in minibuffers."
   :type 'boolean
   :group 'shell

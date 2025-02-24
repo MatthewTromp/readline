@@ -1,24 +1,9 @@
 ;;; readline.el --- gnu readline completions export support -*- lexical-binding: t -*-
 
-;; Copyright 2024 Software Foundation, Inc.
+;; Copyright 2024 Matthew Tromp.
 
 ;; Author: Matthew Tromp <matthewktromp@gmail.com>
-;; Maintainer: emacs-devel@gnu.org
-
-;; This file is part of GNU Emacs.
-
-;; GNU Emacs is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.
+;; Maintainer: matthewktromp@gmail.com
 
 ;;; Commentary:
 
@@ -54,6 +39,10 @@
 ;; - Remote support
 ;; - Don't suggest completion when there's only 1 and it's identical
 ;;   to the input?
+;; - Why is quit inhibited sometimes ("Blocking call to
+;;   accept-process-output with quit inhibited!!") and what should
+;;   be done about that?
+;; - Check bash version to ensure compatibility?
 
 ;;; Code:
 

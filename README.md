@@ -11,6 +11,9 @@ just like if you pressed tab while running bash in a terminal emulator.
 ## Requirements
 You must be running at least version 5.3.0(18)-beta of bash (not yet released).
 
+## Installation
+Run `M-x package-vc-install RET https://github.com/MatthewTromp/readline`
+
 ## Usage
 Add `readline-completion` to `shell-dynamic-complete-functions`, in between `shell-c-a-p-replace-by-expanded-directory` and `pcomplete-completions-at-point`.
 ```

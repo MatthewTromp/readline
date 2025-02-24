@@ -162,21 +162,13 @@ PROC is the bash process providing completions."
 PROC is the bash process providing completions.
 NUM-COMPLETIONS is the number of completions to fetch."
   (let ((so-far 0)
-        (last-point (point))
         (completions nil))
     
     (while (< so-far num-completions)
       ;; Try to find completions in current buffer content
-      (while (and (< so-far num-completions)
-                  (search-forward "\n" nil t))
-        (let ((comp (buffer-substring last-point (1- (point)))))
-          (push comp completions)
-          (setq so-far (1+ so-far))
-          (setq last-point (point))))
-      
-      ;; If we need more completions, wait for more process output
-      (when (< so-far num-completions)
-        (accept-process-output proc readline-completions-timeout)))
+      (let ((comp (readline--getline proc)))
+        (push comp completions)
+        (setq so-far (1+ so-far))))
     
     (nreverse completions)))
 

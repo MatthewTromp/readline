@@ -51,20 +51,17 @@
 (defcustom readline-completions-timeout 0.5
   "Timeout for requesting readline completions.
 If bash takes longer than this to return completions, readline
-completion aborts."
+completion aborts.
+nil means to never abort."
   :type '(choice (number) (const nil))
   :group 'shell
   :version "30.1")
-
-(setopt readline-completions-timeout nil)
 
 (defcustom readline-use-minibuffer-completion t
   "Whether to use readline completions in minibuffers."
   :type 'boolean
   :group 'shell
   :version "30.1")
-;; (setopt readline-use-minibuffer-completion nil)
-(setopt readline-use-minibuffer-completion t)
 
 ;; Local variable allows for disabling readline for specific buffers
 ;; e.g. if a particular buffer is using a shell other than bash
@@ -311,6 +308,7 @@ buffer."
             (make-process :name "readline completions" :command (readline--get-bash-command) :buffer buf))))
       buf)))
 
+;; Cache the most recent completions request/response
 (defvar readline--cache-key nil)
 (defvar readline--cache-value nil)
 
